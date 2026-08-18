@@ -4,7 +4,7 @@ header { text-align: center; margin-bottom: 20px; }
 
 /* Cards do Topo */
 .cards { display: flex; gap: 15px; margin-bottom: 20px; }
-.card { flex: 1; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; }
+.card { flex: 1; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; transition: all 0.3s ease; }
 .card h3 { margin: 0; font-size: 0.95rem; color: #6c757d; }
 .card .value { font-size: 1.8rem; font-weight: bold; margin: 10px 0 0; }
 .card .value-sm { font-size: 1.4rem; font-weight: 600; margin: 10px 0 0; }
@@ -18,9 +18,21 @@ header { text-align: center; margin-bottom: 20px; }
 .badge.Nível\ Ideal, .badge.Nível_Ideal { background: #28a745; }
 .badge.Excesso    { background: #6f42c1; }
 
-/* Alerta Crítico */
-.alert-banner { background: #d9534f; color: #fff; padding: 12px; border-radius: 8px; text-align: center; font-weight: bold; margin-bottom: 15px; }
-.card-critico { border: 2px solid #d9534f; }
+/* Configuração dos Banners de Alerta */
+.alert-banner { color: #fff; padding: 12px; border-radius: 8px; text-align: center; font-weight: bold; margin-bottom: 15px; }
+.alert-emergencia { background: #d9534f; animation: blinker 0.9s infinite alternate; }
+.alert-alerta     { background: #f0ad4e; color: #000; }
+.alert-excesso    { background: #6f42c1; }
+
+@keyframes blinker {
+    from { opacity: 1; }
+    to { opacity: 0.7; }
+}
+
+/* Bordas dinâmicas no Card Principal */
+.card-emergencia { border: 2px solid #d9534f; }
+.card-alerta     { border: 2px solid #f0ad4e; }
+.card-excesso    { border: 2px solid #6f42c1; }
 
 /* Tabela */
 .table-container { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 15px; max-height: 450px; overflow-y: auto; }
