@@ -3,23 +3,44 @@ function formatarHorario(horarioStr) {
     return horarioStr.split('.')[0];
 }
 
-// Gerenciador do Alerta Crítico
+// Gerenciador de Alertas Visuais para Emergência, Alerta e Excesso
 function gerenciarAlertaCritico(classificacao) {
     const alertBanner = document.getElementById('critical-alert');
     const cardPrincipal = document.getElementById('card-principal');
 
-    const ehCritico = classificacao === 'Emergência' || classificacao === 'Emergencia' || classificacao === 'Excesso';
+    if (!alertBanner || !cardPrincipal) return;
 
-    if (ehCritico) {
+    // Remove acentos e converte para minúsculas (ex: "Emergência" -> "emergencia")
+    const textoLimpo = (classificacao || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim()
+        .toLowerCase();
+
+    // Limpa classes anteriores
+    alertBanner.className = 'alert-banner';
+    cardPrincipal.classList.remove('card-emergencia', 'card-alerta', 'card-excesso');
+
+    if (textoLimpo.includes('emergencia')) {
         alertBanner.style.display = 'block';
-        alertBanner.innerText = (classificacao === 'Emergência' || classificacao === 'Emergencia')
-            ? '🚨 ALERTA CRÍTICO: Umidade em Nível de Emergência!' 
-            : '⚠️ ALERTA CRÍTICO: Umidade em Nível de Excesso!';
-        
-        cardPrincipal.classList.add('card-critico');
-    } else {
+        alertBanner.classList.add('alert-emergencia');
+        alertBanner.innerText = 'ALERTA CRÍTICO: Nível de EMERGÊNCIA (Solo Extremamente Seco)!';
+        cardPrincipal.classList.add('card-emergencia');
+    } 
+    else if (textoLimpo.includes('alerta')) {
+        alertBanner.style.display = 'block';
+        alertBanner.classList.add('alert-alerta');
+        alertBanner.innerText = 'AVISO: Nível de ALERTA (Umidade Baixa, Necessária Irrigação)!';
+        cardPrincipal.classList.add('card-alerta');
+    } 
+    else if (textoLimpo.includes('excesso')) {
+        alertBanner.style.display = 'block';
+        alertBanner.classList.add('alert-excesso');
+        alertBanner.innerText = 'AVISO CRÍTICO: Nível de EXCESSO (Risco de Encharcamento)!';
+        cardPrincipal.classList.add('card-excesso');
+    } 
+    else {
         alertBanner.style.display = 'none';
-        cardPrincipal.classList.remove('card-critico');
     }
 }
 
@@ -40,7 +61,7 @@ async function atualizarDashboard() {
 
             document.getElementById('timestamp').innerText = formatarHorario(data.atual.timestamp);
 
-            // Dispara o alerta visual se necessário
+            // Dispara a lógica de alertas
             gerenciarAlertaCritico(data.atual.classification);
         }
 
