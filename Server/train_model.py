@@ -12,11 +12,11 @@ X_train = np.array([
 ])
 
 y_train = np.array([
-    'Emergência', 'Emergência', 'Emergência', 'Emergência',
+    'Emergencia', 'Emergencia', 'Emergencia', 'Emergencia',
     'Alerta', 'Alerta', 'Alerta', 'Alerta',
-    'Atenção', 'Atenção', 'Atenção', 'Atenção',
-    'Aceitável', 'Aceitável', 'Aceitável', 'Aceitável',
-    'Nível Ideal', 'Nível Ideal', 'Nível Ideal', 'Nível Ideal',
+    'Atencao', 'Atencao', 'Atencao', 'Atencao',
+    'Aceitavel', 'Aceitavel', 'Aceitavel', 'Aceitavel',
+    'Nivel Ideal', 'Nivel Ideal', 'Nivel Ideal', 'Nivel Ideal',
     'Excesso', 'Excesso', 'Excesso', 'Excesso', 'Excesso'
 ])
 
