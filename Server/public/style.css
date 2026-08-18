@@ -1,0 +1,30 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #eef2f5; margin: 0; padding: 20px; color: #333; }
+.container { max-width: 900px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 20px; }
+
+/* Cards do Topo */
+.cards { display: flex; gap: 15px; margin-bottom: 20px; }
+.card { flex: 1; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; }
+.card h3 { margin: 0; font-size: 0.95rem; color: #6c757d; }
+.card .value { font-size: 1.8rem; font-weight: bold; margin: 10px 0 0; }
+.card .value-sm { font-size: 1.4rem; font-weight: 600; margin: 10px 0 0; }
+
+/* Badges da IA */
+.badge { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 1.1rem; color: #fff; background: #6c757d; font-weight: bold; }
+.badge.Emergência, .badge.Emergencia { background: #d9534f; }
+.badge.Alerta     { background: #f0ad4e; }
+.badge.Atenção, .badge.Atencao       { background: #ffc107; color: #000; }
+.badge.Aceitável, .badge.Aceitavel   { background: #17a2b8; }
+.badge.Nível\ Ideal, .badge.Nível_Ideal { background: #28a745; }
+.badge.Excesso    { background: #6f42c1; }
+
+/* Alerta Crítico */
+.alert-banner { background: #d9534f; color: #fff; padding: 12px; border-radius: 8px; text-align: center; font-weight: bold; margin-bottom: 15px; }
+.card-critico { border: 2px solid #d9534f; }
+
+/* Tabela */
+.table-container { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 15px; max-height: 450px; overflow-y: auto; }
+.table-container h2 { margin: 0 0 10px 0; font-size: 1.1rem; color: #0d6efd; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background-color: #0d6efd; color: white; position: sticky; top: 0; }

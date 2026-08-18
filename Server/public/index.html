@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Monitoramento IoT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Monitoramento de Umidade IoT</h1>
+            <p>Projeto Integrado - ETE FMC</p>
+        </header>
+
+        <!-- Alerta Visual Crítico -->
+        <div id="critical-alert" class="alert-banner" style="display: none;">
+            ⚠️ ATENÇÃO: Nível Crítico Detectado no Sensor!
+        </div>
+        
+        <!-- Cards de Destaque no Topo -->
+        <div class="cards">
+            <div class="card" id="card-principal">
+                <h3>Leitura Atual</h3>
+                <p id="humidity-val" class="value" style="color: #0d6efd;">--%</p>
+            </div>
+            <div class="card">
+                <h3>Status da Medição</h3>
+                <p id="classification" class="badge">--</p>
+            </div>
+            <div class="card">
+                <h3>Horário da Leitura</h3>
+                <p id="timestamp" class="value-sm">--:--:--</p>
+            </div>
+        </div>
+
+        <!-- Tabela de Histórico -->
+        <section class="table-container">
+            <h2>Histórico Recente</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Valor ADC (0-4095)</th>
+                        <th>Umidade (%)</th>
+                        <th>Classificação da IA</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table">
+                    <tr>
+                        <td colspan="4" style="text-align: center;">Aguardando dados...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
