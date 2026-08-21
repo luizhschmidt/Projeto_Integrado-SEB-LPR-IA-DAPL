@@ -15,6 +15,7 @@ Demonstração em vídeo: https://youtu.be/G90bX4INW8k
 # Tecnologias utilizadas
 
 O fluxo abaixo mostra como o dado percorre cada camada do sistema, da leitura analógica do trimpot até a interface web do operador.
+
 (imgs/architecture_diagram.png)
 
 # Vantagens do uso do protocolo proprietário
@@ -25,10 +26,11 @@ O fluxo abaixo mostra como o dado percorre cada camada do sistema, da leitura an
 - Depuração direta: os valores podem ser inspecionados visualmente em qualquer monitor serial convencional.
 
 # Diagrama de pastas do projeto
-(imgs/folder_structure.png
+(imgs/folder_structure.png)
 
 ## Classificação por Inteligência Artificial (k-NN)
 Tabela de referência usada para treinar e validar o modelo KNN que classifica a leitura do ADC em categorias de umidade.
+
 (imgs/dataset_table.png)
 
 
