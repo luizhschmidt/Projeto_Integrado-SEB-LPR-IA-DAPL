@@ -18,6 +18,7 @@
  └───────────┬────────────┘
              │ Tensão Contínua no pino PA2
              ▼
+             
  ┌───────────────────────────────────────────────────────────┐
  │            SISTEMAS EMBARCADOS - SEB (STM32)              │         │
  │ 1. Leitura ADC (12 bits: 0 a 4095)                        │
@@ -27,6 +28,7 @@
                              │ Protocolo Proprietário USB CDC (Virtual COM @ 115200 bps)
                              │ Pacote: [ H2 ][ H1 ][ H0 ][ \r ][ \n ] (Ex: "71A\r\n")
                              ▼
+                             
  ┌───────────────────────────────────────────────────────────┐
  │          LINGUAGENS DE PROGRAMAÇÃO - LPR (C#)             │
  │ 1. Monitoramento da Porta COM      │
@@ -37,6 +39,8 @@
                              │ Protocolo HTTP/1.1 POST /api/readings
                              │ { "value": 1818 }
                              ▼
+
+                           
  ┌───────────────────────────────────────────────────────────┐
  │        DESENVOLVIMENTO DE APLICAÇÕES - DAPL (Node.js)     │
  │ 1. Servidor Express escutando na porta 3000               │
@@ -45,6 +49,7 @@
  └─────────────┬─────────────────────────────────▲───────────┘
                │ entrada: "1818"                 │ saida: "Aceitável"
                ▼                                 │
+               
  ┌───────────────────────────────────────────────┴───────────┐
  │            INTELIGÊNCIA ARTIFICIAL - IA (Python)          │
  │ 1. Script persistente na memória (predict.py)             │
@@ -52,6 +57,7 @@
  └───────────────────────────────────────────────────────────┘
                │ 
                ▼
+               
  ┌───────────────────────────────────────────────────────────┐
  │              INTERFACE WEB DO OPERADOR (DAPL)             │
  │ 1. HTTP GET /api/data a cada 100 ms                       │
@@ -59,6 +65,7 @@
  │ 3. Tabela completa de histórico de leituras               │
  │ 4. Alertas visuais críticos dinâmicos                     │
  └───────────────────────────────────────────────────────────┘
+
 
 Vantagens do Uso do Protocolo Proprietário:
 Otimização de Largura de Banda: Transmitir a leitura máxima em decimal (4095\r\n) demanda 6 bytes. Em hexadecimal (FFF\r\n), o pacote gasta 5 bytes
